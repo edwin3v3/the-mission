@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon-secret.png" />
+    <link rel="stylesheet" href="src/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Mission</title>
+  </head>
+  <body>
+    <div class="bg-[#090c11] h-screen w-screen">
+      <header class="flex justify-evenly">
+        <div>&nbsp;</div>
+        <h1 class="text-[#b73b2a] m-2 text-5xl font-digital-7">MISSION IMPOSSIBLE</h1>
+        <div class="text-[#78cea1] font-digital-7 flex justify-between">
+          <div class="text-4xl mt-2" id="#the-time">21:47</div>
+          <img class="h-[34px] ml-6 mt-3" src="/icon-secret.png" alt="">
+        </div>
+      </header> 
+      <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      let time = Date.now();
+      console.log(time);
+      document.getElementById("the-time").innerHTML = time;
+
+    </script>
+  </body>
+</html>
