@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import {Link}   from 'react-router'
+
 
 const url = "https://mission-server.onrender.com/missions";
 
@@ -26,9 +28,12 @@ function MissionList({ onMissionClick }) {
 
   return (
     <div className="overflow-x-auto">
+      <Link to={'/add-mission'}></Link>
+
       {error ? (
         <div className="text-red-500 text-center py-4">{error}</div>
       ) : (
+        
         <table className="min-w-full text-left text-gray-300">
           <thead>
             <tr className="border-b border-gray-700 text-gray-400 uppercase text-sm">
