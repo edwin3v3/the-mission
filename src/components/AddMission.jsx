@@ -77,3 +77,6 @@ function AddMission() {
     </div>
   );
 }
+
+export default AddMission;
+
