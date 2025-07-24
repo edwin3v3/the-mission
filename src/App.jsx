@@ -14,7 +14,7 @@ function App() {
       
       <Routes>
         <Route index element={<MissionList />} />
-        <Route path="/add-mission" element={<Dashboard />} />
+        <Route path="/add-mission" element={<AddMission />} />
         
         <Route path="/mission-list" element={<MissionList />} />
       </Routes>
