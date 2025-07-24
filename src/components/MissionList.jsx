@@ -21,6 +21,8 @@ function MissionList({ onMissionClick }) {
         setError("Failed to load missions. Please try again later.");
       });
   }, []);
+  console.log(missions)
+
 
   return (
     <div className="overflow-x-auto">
