@@ -29,7 +29,7 @@ function MissionList({ onMissionClick }) {
   return (
     <div className="overflow-x-auto">
       <Link to={'/add-mission'}></Link>
-      
+
       {error ? (
         <div className="text-red-500 text-center py-4">{error}</div>
       ) : (
