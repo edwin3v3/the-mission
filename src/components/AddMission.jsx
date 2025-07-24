@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
+const url = "https://mission-server.onrender.com/missions";
+
 function AddMission() {
   const [missions, setMissions] = React.useState([]);
   const [formData, setFormData] = useState({
@@ -10,25 +12,22 @@ function AddMission() {
     mission_status: ""
   });
 
-  const sendMission = async (mission) => {
-    try {
-      const response = await fetch("https://mission-server.onrender.com/missions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(mission),
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      console.log("Mission added successfully:", data);
-      setMissions((prevMissions) => [...prevMissions, data]);
-    } catch (error) {
-      console.error("Failed to add mission:", error);
-    }
-  };
+
+   const sendMission = (e) =>{
+    e.preventDefault();
+
+    fetch(url, {
+      method: "POST",
+      body:JSON.stringify(formData),
+      headers:{"Content-Type": "application/json"}
+    })
+      .then(res => res.json())
+      .then((data)=>{
+        setFormData({code_name:"", objective:""});
+        const newArr = [...missions, data]
+        setMissions(newArr);
+      })
+  }
 
 
   return (
@@ -57,18 +56,23 @@ function AddMission() {
               setFormData({ ...formData, difficulty: e.target.value })
             }
           >
-            <option value="Extreme">Extreme</option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
+            <option value="EXTREME">Extreme</option>
+            <option value="HARD">HARD</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="EASY">EASY</option>
           </select>
-          <input
-            type="text"
+        <select name="mission_status"
+
             value={formData.mission_status}
-            onChange={(e) => { setFormData({ ...formData, mission_status: e.target.value }) }}
-            placeholder="Enter mission status"
-            required
-          />
+            onChange={(e) =>
+              setFormData({ ...formData, mission_status: e.target.value })
+            }
+          >
+            <option value="ACTIVE">ACTIVE</option>
+            <option value="CLASSIFIED">CLASSIFIED</option>
+            <option value="FAILED">FAILED</option>
+            <option value="SUSPENDED">SUSPENDED</option>
+          </select>
 
           <button type="submit">Add Mission</button>
         </form>
