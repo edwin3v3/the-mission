@@ -9,12 +9,27 @@ function AddMission() {
         priority: "",
         misson_status: ""
     });
-  const handleAddMission = () => {
-    if (mission.trim()) {
-      setMissions([...missions, mission]);
-      setMission("");
+
+  const sendMission = async (mission) => {
+    try {
+      const response = await fetch("https://mission-server.onrender.com/missions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(mission),
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log("Mission added successfully:", data);
+      setMissions((prevMissions) => [...prevMissions, data]);
+    } catch (error) {
+      console.error("Failed to add mission:", error);
     }
-  };
+  };    
+
 
   return (
     <div>
