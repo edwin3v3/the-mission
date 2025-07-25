@@ -1,34 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import {Link}   from 'react-router'
+import React from 'react';
 
-
-const url = "https://mission-server.onrender.com/missions";
-
-function MissionList({ onMissionClick }) {
-  const [missions, setMissions] = useState([]);
-  console.log(missions)
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => setMissions(data))
-      .catch((err) => {
-        console.error("Failed to fetch missions:", err);
-        setError("Failed to load missions. Please try again later.");
-      });
-  }, []);
-  console.log(missions)
-
+function MissionList({ missions, onMissionClick, onUpdateMissionStatus, onUpdateMissionProgress }) {
+  if (!missions || missions.length === 0) {
+    return <p className="text-[#C9D1D9] text-center py-4">No missions to display.</p>;
+  }
 
   return (
-    <div className="overflow-x-auto">
-      <Link className='bg-gray-200 text-amber-900 rounded-3xl' to={'/add-mission'}>Add Mission</Link>
+<div className="overflow-x-auto">
+      <Link to={'/add-mission'}></Link>
 
       {error ? (
         <div className="text-red-500 text-center py-4">{error}</div>
@@ -89,4 +68,4 @@ function MissionList({ onMissionClick }) {
   );
 }
 
-export default MissionList;
+export default MissionList;
