@@ -12,7 +12,6 @@ function Dashboard() {
       .then((res) => {
         if (!res.ok) {
           throw new Error(HTTP error! status: ${ res.status });
-
         }
         return res.json();
       })
@@ -27,9 +26,7 @@ function Dashboard() {
       });
   }, []);
 
-
-  const activeMissions = missions.filter(m => m.mission_status === 'ACTIVE').length;
-
+    const activeMissions = missions.filter(m => m.mission_status === 'ACTIVE').length;
   const completedMissions = missions.filter(m => m.mission_status === 'CLASSIFIED' || m.mission_status === 'COMPLETED').length;
   const failedMissions = missions.filter(m => m.mission_status === 'FAILED').length;
 
@@ -74,10 +71,7 @@ function Dashboard() {
         </div>
       </div>
 
-
-
         {/* Mission Status Panel - Top Right */}
-
       <div className="bg-[#161B22] rounded-lg shadow-xl p-4 border border-[#30363D] lg:col-span-1">
         <h2 className="text-2xl font-bold mb-4 text-[#FDE047]">MISSION STATUS</h2>
         <div className="grid grid-cols-3 gap-4 text-center text-lg font-semibold">
@@ -96,9 +90,7 @@ function Dashboard() {
         </div>
       </div>
 
-
        {/* Intelligence Status Panel - Bottom Left */}
-
       <div className="bg-[#161B22] rounded-lg shadow-xl p-4 border border-[#30363D] lg:col-span-1">
         <h2 className="text-2xl font-bold mb-4 text-[#FDE047]">INTELLIGENCE STATUS</h2>
         <ul className="space-y-3 text-lg">
@@ -129,11 +121,6 @@ function Dashboard() {
         </p>
       </div>
 
-    </div>
-  );
-}
-
-
 
 
 
@@ -146,7 +133,6 @@ function Dashboard() {
   )
 
 }
-
 
 
 export default Dashboard;
