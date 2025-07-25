@@ -9,3 +9,7 @@
 @theme{
   --font-digital-7: Digital7, "sans-serif";
 }
+
+div{
+  color: #78cea1;
+}
