@@ -90,6 +90,25 @@ function Dashboard() {
         </div>
       </div>
 
+       {/* Intelligence Status Panel - Bottom Left */}
+      <div className="bg-[#161B22] rounded-lg shadow-xl p-4 border border-[#30363D] lg:col-span-1">
+        <h2 className="text-2xl font-bold mb-4 text-[#FDE047]">INTELLIGENCE STATUS</h2>
+        <ul className="space-y-3 text-lg">
+          <li className="flex items-center">
+            <span className="w-3 h-3 rounded-full bg-[#39FF14] mr-3 animate-pulse"></span>
+            Encrypted message decoded. <span className="ml-auto text-[#39FF14]">ACTIVE</span>
+          </li>
+          <li className="flex items-center">
+            <span className="w-3 h-3 rounded-full bg-[#C9D1D9] mr-3"></span>
+            Rendezvous set at the safe house.
+          </li>
+          <li className="flex items-center">
+            <span className="w-3 h-3 rounded-full bg-[#C9D1D9] mr-3"></span>
+            Awaiting further orders <span className="ml-auto text-[#C9D1D9]">COMPLETED</span>
+          </li>
+        </ul>
+      </div>
+
 
 
 
