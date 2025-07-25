@@ -71,12 +71,31 @@ function Dashboard() {
         </div>
       </div>
 
+        {/* Mission Status Panel - Top Right */}
+      <div className="bg-[#161B22] rounded-lg shadow-xl p-4 border border-[#30363D] lg:col-span-1">
+        <h2 className="text-2xl font-bold mb-4 text-[#FDE047]">MISSION STATUS</h2>
+        <div className="grid grid-cols-3 gap-4 text-center text-lg font-semibold">
+          <div>
+            <p className="text-[#C9D1D9]">ACTIVE</p>
+            <p className="text-4xl text-[#39FF14] font-mono">{activeMissions}</p>
+          </div>
+          <div>
+            <p className="text-[#C9D1D9]">COMPLETED</p>
+            <p className="text-4xl text-[#C9D1D9] font-mono">{completedMissions}</p>
+          </div>
+          <div>
+            <p className="text-[#C9D1D9]">FAILED</p>
+            <p className="text-4xl text-[#FF3131] font-mono">{failedMissions}</p>
+          </div>
+        </div>
+      </div>
 
 
 
 
 
-      
+
+
 
       </div>
 
