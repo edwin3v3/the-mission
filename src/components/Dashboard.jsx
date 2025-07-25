@@ -109,6 +109,18 @@ function Dashboard() {
         </ul>
       </div>
 
+      {/* Intelligence File Panel - Bottom Right (no map) */}
+      <div className="bg-[#161B22] rounded-lg shadow-xl p-4 border border-[#30363D] lg:col-span-1">
+        <h2 className="text-2xl font-bold mb-4 text-[#FDE047]">INTELLIGENCE FILE</h2>
+        <div className="bg-[#FF3131] text-white text-sm font-bold px-3 py-1 rounded-md inline-block mb-3">TOP SECRET</div>
+        <p className="text-lg leading-relaxed text-[#C9D1D9]">
+          Encrypted message decoded. Rendezvous set at safe house. Awaiting further orders.
+          The target's last known location was a secure facility in the outskirts.
+          Further reconnaissance is required before proceeding with extraction.
+          Ensure all communication channels remain encrypted.
+        </p>
+      </div>
+
 
 
 
