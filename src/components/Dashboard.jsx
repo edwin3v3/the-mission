@@ -34,6 +34,7 @@ function Dashboard() {
   const failedMissions = missions.filter(m => m.mission_status === 'FAILED').length;
 
   return (
+    <>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* Mission Log Panel - Top Left */}
       <div className="bg-[#161B22] rounded-lg shadow-xl p-4 border border-[#30363D] lg:col-span-1">
@@ -129,6 +130,7 @@ function Dashboard() {
         </div>
 
     </div>
+      </>
   );
 }
 
