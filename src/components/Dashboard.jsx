@@ -128,6 +128,7 @@ function Dashboard() {
           Ensure all communication channels remain encrypted.
         </p>
         </div>
+      </div>
 
     </div>
       </>
