@@ -126,6 +126,7 @@ function Dashboard() {
           Further reconnaissance is required before proceeding with extraction.
           Ensure all communication channels remain encrypted.
         </p>
+        </div>
 
     </div>
   );
