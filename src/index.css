@@ -1,15 +1,39 @@
-@font-face {
-  font-family: 'Digital7';
-  src: url('../src/assets/fonts/digital-7.ttf');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for the entire application */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif; /* Apply the Orbitron font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0D1117; /* Very dark blue-black background */
+  color: #C9D1D9; /* Light grayish-blue text */
+  overflow: hidden; /* Hide default body scrollbar */
 }
 
-@import "tailwindcss";
-
-
-@theme{
-  --font-digital-7: Digital7, "sans-serif";
+/* Ensure the root element takes full height */
+#root {
+  min-height: 100vh;
 }
 
-div{
-  color: #78cea1;
+/* Custom scrollbar styling for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161B22; /* Darker track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363D; /* Dark gray thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4A5568; /* Slightly lighter on hover */
 }
